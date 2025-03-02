@@ -178,3 +178,7 @@
 .fifth {
   animation: moveInCircle 20s ease infinite;
 }
+
+::-webkit-scrollbar {
+  display: none;
+}

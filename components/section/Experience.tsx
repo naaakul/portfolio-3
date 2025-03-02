@@ -45,7 +45,7 @@ const Cards = ({
   des: string;
 }) => {
   return (
-    <div className="flex flex-col gap-2 text-white">
+    <div className="flex flex-col gap-2 text-white border-b border-b-zinc-600 pb-5">
       <a href={link}>
         <p className="flex items-center text-lg gap-2 font-medium">
           <MdArrowOutward className="text-xl" />
