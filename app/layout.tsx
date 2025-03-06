@@ -25,10 +25,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black`}
       >
+        <div className="z-30 pointer-events-none bg-gradient-to-t from-transparent via-transparent to-black w-full h-3/5 fixed top-0"></div>
         {children}
-        <div className="bg-gradient-to-b from-transparent via-transparent to-black w-full h-3/5 fixed bottom-0"></div>
+        <div className="z-30 pointer-events-none bg-gradient-to-b from-transparent via-transparent to-black w-full h-3/5 fixed bottom-0"></div>
       </body>
     </html>
   );
