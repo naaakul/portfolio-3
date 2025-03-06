@@ -1,8 +1,8 @@
 "use client"; 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 
 const TextAnimation = () => {
-  const phrases = ["nerd.", "designer.", "gamer."];
+  const phrases = useMemo(() => ["nerd.", "designer.", "gamer."], []);
   const [text, setText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
@@ -12,7 +12,6 @@ const TextAnimation = () => {
   const waitBeforeNewPhrase = 200; 
 
   useEffect(() => {
-    let timer;
     const currentPhrase = phrases[currentPhraseIndex];
 
     const tick = () => {
@@ -36,9 +35,9 @@ const TextAnimation = () => {
       setDelta(newDelta);
     };
 
-    timer = setTimeout(tick, delta);
+    const timer = setTimeout(tick, delta);
     return () => clearTimeout(timer);
-  }, [text, isDeleting, currentPhraseIndex, delta, phrases]);
+  }, [text, isDeleting, currentPhraseIndex, delta]);
 
   const cursorStyle = {
     opacity: 1,

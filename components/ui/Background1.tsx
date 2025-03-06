@@ -26,7 +26,6 @@ export const BackgroundGradientAnimation1 = ({
   fourthColor = "200, 50, 50",
   fifthColor = "180, 180, 50",
   size = "80%",
-  blendingValue = "hard-light",
   children,
   className,
   containerClassName,
@@ -449,7 +448,7 @@ export const BackgroundGradientAnimation2 = ({
   fourthColor?: string;
   fifthColor?: string;
   size?: string;
-  blendingValue?: string;
+  blendingValue?: React.CSSProperties["mixBlendMode"];
   children?: React.ReactNode;
   className?: string;
   containerClassName?: string;
@@ -488,7 +487,7 @@ export const BackgroundGradientAnimation2 = ({
               className="absolute w-[var(--size)] h-[var(--size)] opacity-80 rounded-full"
               style={{
                 background: `radial-gradient(circle at center, rgba(${color}, 0.8) 0%, rgba(${color}, 0) 50%)`,
-                mixBlendMode: blendingValue as any,
+                mixBlendMode: blendingValue,
                 animation: `move${index + 1} 10s infinite alternate ease-in-out`
               }}
             ></div>

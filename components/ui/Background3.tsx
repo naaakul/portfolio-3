@@ -70,7 +70,7 @@ export const BackgroundGradientAnimation4: React.FC<{ className?: string }> = ({
         mountRef.current.removeChild(renderer.domElement);
       }
     };
-  }, []);
+  }, [mountRef]);
 
   return <div ref={mountRef} className={`absolute top-0 left-0 w-full h-full ${className}`} />;
 }; 
