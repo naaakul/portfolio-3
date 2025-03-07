@@ -8,7 +8,7 @@ import Works from "@/components/section/Works";
 import Lenis from "lenis";
 import Footer from "@/components/section/Footer";
 
-const page = () => {
+const Page = () => {
   useEffect(() => {
     const lenis = new Lenis();
     function raf(time: any) {
