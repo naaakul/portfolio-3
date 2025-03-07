@@ -76,19 +76,20 @@ const Footer = () => {
                   </a>
                 </li>
                 <li className="hover:underline cursor-pointer">
-                  <a target="_blank" href="https://x.com/heynakul">
+                  <a target="_blank" href="https://github.com/naaakul">
                     Github
                   </a>
                 </li>
                 <li className="hover:underline cursor-pointer">
-                  <a target="_blank" href="https://x.com/heynakul">
+                  <a target="_blank" href="https://www.linkedin.com/in/nakul-chouksey/">
                     Linkedin
                   </a>
                 </li>
               </ul>
             </div>
             <h2 className="absolute -bottom-4 josefin-sans left-0 translate-y-1/3 sm:text-[192px] text-[128px] text-white font-black tracking-tighter">
-              NAKUL.
+              <span className="hidden sm:inline">NAKUL.</span>
+              <span className="inline sm:hidden">NAK.</span>
             </h2>
           </div>
         </div>

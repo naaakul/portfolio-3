@@ -1,5 +1,11 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 import React from "react";
-import { MdArrowOutward } from "react-icons/md";
+import WorkCard from "../ui/WorkCard";
 
 interface info {
   name: string;
@@ -41,16 +47,39 @@ const cardData: info[] = [
 ];
 
 const Works = () => {
+  const boxRef = useRef(null);
+  
+    useEffect(() => {
+      let ctx = gsap.context(() => {
+        gsap.fromTo(
+          boxRef.current,
+          { y: 100 },
+          {
+            y: 0,
+            duration: 1,
+            scrollTrigger: {
+              trigger: boxRef.current,
+              start: "top 80%",
+              end: "top 50%",
+              scrub: true,
+            },
+          }
+        );
+      });
+  
+      return () => ctx.revert();
+    }, []);
+
   return (
-    <div className="grid grid-cols-1 gap-6 max-w-3xl mx-auto w-full">
+    <div ref={boxRef} className="grid grid-cols-1 px-4 sm:px-0 gap-6 max-w-3xl mx-auto w-full">
       <div className="flex flex-col gap-1">
         <h2 className="text-2xl text-white tracking-tighter font-bold uppercase">
           Works
         </h2>
       </div>
-      <div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-10">
         {cardData.map((e) => (
-          <Cards
+          <WorkCard
             key={e.name}
             name={e.name}
             link={e.link}
@@ -59,41 +88,6 @@ const Works = () => {
           />
         ))}
       </div>
-      <div className="flex flex-col gap-8"></div>
-    </div>
-  );
-};
-
-const Cards = ({
-  name,
-  link,
-  des,
-  gitLink,
-}: {
-  name: string;
-  link?: string;
-  des: string;
-  gitLink: string;
-}) => {
-  return (
-    <div className="flex flex-col gap-2 text-white border-b border-b-zinc-600 pb-5">
-      <div className="flex gap-10">
-        <a href={link ? link : gitLink}>
-          <p className="flex items-center text-lg gap-2 font-medium">
-            <MdArrowOutward className="text-xl" />
-            {name}
-          </p>
-        </a>
-        {link && (
-          <a href={gitLink}>
-            <p className="flex items-center text-lg gap-2 font-medium">
-              <MdArrowOutward className="text-xl" />
-              Source Code
-            </p>
-          </a>
-        )}
-      </div>
-      <p className="">{des}</p>
     </div>
   );
 };

@@ -46,9 +46,9 @@ const TextAnimation = () => {
 
   return (
     <div className='text-white' style={{ fontFamily: 'Arial, sans-serif', fontSize: '2.5rem', fontWeight: 'bold' }}>
-      <span>I'm a </span>
-      <span>{text}</span>
-      <span style={cursorStyle} className="cursor">_</span>
+      <span className='font-medium josefin-sans text-2xl lg:text-5xl'>I'm a </span>
+      <span className='font-medium josefin-sans text-2xl lg:text-5xl'>{text}</span>
+      <span style={cursorStyle} className="font-medium josefin-sans text-2xl lg:text-5xl cursor">_</span>
 
       <style jsx global>{`
         @keyframes blink {

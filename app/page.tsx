@@ -21,7 +21,7 @@ const Page = () => {
   }, []);
 
   return (
-    <div className="flex flex-col gap-16 py-4 md:py-8 bg-black overflow-hidden">
+    <div className="flex flex-col gap-16 pt-4 md:pt-8 pb-2 md:pb-4 bg-black overflow-hidden">
       <Hero />
       <Gradient />
       <Experience />

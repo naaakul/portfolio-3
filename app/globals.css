@@ -1,23 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Averia+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Gabarito:wght@400..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Averia+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Gabarito:wght@400..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
 
 ::-webkit-scrollbar {
   display: none;
 }
 
-
 .averia-libre {
-    font-family: 'Averia Libre', cursive;
+  font-family: "Averia Libre";
 }
 
 .gabarito {
-    font-family: 'Gabarito', sans-serif;
+  font-family: "Gabarito";
 }
 
 .josefin-sans {
-    font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans";
 }
 
 .jost {
-    font-family: 'Jost', sans-serif;
+  font-family: "Jost";
 }

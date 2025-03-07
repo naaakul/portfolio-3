@@ -1,5 +1,11 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 import React from "react";
-import { MdArrowOutward } from "react-icons/md";
+import ExpCard from "../ui/ExpCard";
 
 interface info {
   name: string;
@@ -18,42 +24,47 @@ const cardData: info[] = [
 ];
 
 const Experience = () => {
+  const boxRef = useRef(null);
+  
+  useEffect(() => {
+    let ctx = gsap.context(() => {
+      gsap.fromTo(
+        boxRef.current,
+        { y: 100 },
+        {
+          y: 0,
+          duration: 1,
+          scrollTrigger: {
+            trigger: boxRef.current,
+            start: "top 80%",
+            end: "top 50%",
+            scrub: true,
+          },
+        }
+      );
+    });
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <div className="grid grid-cols-1 gap-6 max-w-3xl mx-auto w-full">
+    <div ref={boxRef} className="grid grid-cols-1 px-4 sm:px-0 gap-6 max-w-3xl mx-auto w-full">
       <div className="flex flex-col gap-1">
         <h2 className="text-2xl text-white tracking-tighter font-bold uppercase">
           Experience
         </h2>
       </div>
+      <div className="flex flex-col gap-10">
         {cardData.map((e) => (
-          <Cards key={e.name} name={e.name} link={e.link} date={e.date} des={e.des}/>
+          <ExpCard
+            key={e.name}
+            name={e.name}
+            link={e.link}
+            date={e.date}
+            des={e.des}
+          />
         ))}
-      <div className="flex flex-col gap-8"></div>
-    </div>
-  );
-};
-
-const Cards = ({
-  name,
-  link,
-  date,
-  des,
-}: {
-  name: string;
-  link: string;
-  date: string;
-  des: string;
-}) => {
-  return (
-    <div className="flex flex-col gap-2 text-white border-b border-b-zinc-600 pb-5">
-      <a href={link}>
-        <p className="flex items-center text-lg gap-2 font-medium">
-          <MdArrowOutward className="text-xl" />
-          {name}
-        </p>
-      </a>
-      <p className="text-sm text-zinc-600">{date}</p>
-      <p className="">{des}</p>
+      </div>
     </div>
   );
 };
