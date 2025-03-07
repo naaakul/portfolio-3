@@ -42,8 +42,17 @@ export const BackgroundGradientAnimation3: React.FC<BackgroundGradientAnimationP
   const [curY, setCurY] = useState<number>(0);
   const [tgX, setTgX] = useState<number>(0);
   const [tgY, setTgY] = useState<number>(0);
+  const [isSafari, setIsSafari] = useState<boolean>(false);
+  const [isClient, setIsClient] = useState<boolean>(false);
+
+  // Set isClient to true when component mounts (client-side only)
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   useEffect(() => {
+    if (!isClient) return;
+    
     const styleElement = document.createElement("style");
     styleElement.textContent = `
       @keyframes moveHorizontal {
@@ -110,9 +119,12 @@ export const BackgroundGradientAnimation3: React.FC<BackgroundGradientAnimationP
     pointerColor,
     size,
     blendingValue,
+    isClient,
   ]);
 
   useEffect(() => {
+    if (!isClient) return;
+    
     function move(): void {
       if (!interactiveRef.current) {
         return;
@@ -125,7 +137,13 @@ export const BackgroundGradientAnimation3: React.FC<BackgroundGradientAnimationP
     }
 
     move();
-  }, [curX, curY, tgX, tgY]);
+  }, [curX, curY, tgX, tgY, isClient]);
+
+  useEffect(() => {
+    if (!isClient) return;
+    
+    setIsSafari(/^((?!chrome|android).)*safari/i.test(navigator.userAgent));
+  }, [isClient]);
 
   const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>): void => {
     if (interactiveRef.current) {
@@ -134,12 +152,6 @@ export const BackgroundGradientAnimation3: React.FC<BackgroundGradientAnimationP
       setTgY(event.clientY - rect.top);
     }
   };
-
-  const [isSafari, setIsSafari] = useState<boolean>(false);
-
-  useEffect(() => {
-    setIsSafari(/^((?!chrome|android).)*safari/i.test(navigator.userAgent));
-  }, []);
 
   return (
     <div
@@ -186,9 +198,7 @@ export const BackgroundGradientAnimation3: React.FC<BackgroundGradientAnimationP
             position: "absolute",
             background:
               "radial-gradient(circle at center, var(--first-color) 0, var(--first-color) 50%) no-repeat",
-            mixBlendMode: getComputedStyle(document.body)
-              .getPropertyValue("--blending-value")
-              .trim() as React.CSSProperties["mixBlendMode"],
+            mixBlendMode: blendingValue as React.CSSProperties["mixBlendMode"],
             width: "var(--size)",
             height: "var(--size)",
             top: "calc(50% - var(--size)/2)",
@@ -203,10 +213,7 @@ export const BackgroundGradientAnimation3: React.FC<BackgroundGradientAnimationP
             position: "absolute",
             background:
               "radial-gradient(circle at center, rgba(var(--second-color), 0.8) 0, rgba(var(--second-color), 0) 50%) no-repeat",
-            mixBlendMode: getComputedStyle(document.body)
-              .getPropertyValue("--blending-value")
-              .trim() as React.CSSProperties["mixBlendMode"],
-
+            mixBlendMode: blendingValue as React.CSSProperties["mixBlendMode"],
             width: "var(--size)",
             height: "var(--size)",
             top: "calc(50% - var(--size)/2)",
@@ -221,10 +228,7 @@ export const BackgroundGradientAnimation3: React.FC<BackgroundGradientAnimationP
             position: "absolute",
             background:
               "radial-gradient(circle at center, rgba(var(--third-color), 0.8) 0, rgba(var(--third-color), 0) 50%) no-repeat",
-            mixBlendMode: getComputedStyle(document.body)
-              .getPropertyValue("--blending-value")
-              .trim() as React.CSSProperties["mixBlendMode"],
-
+            mixBlendMode: blendingValue as React.CSSProperties["mixBlendMode"],
             width: "var(--size)",
             height: "var(--size)",
             top: "calc(50% - var(--size)/2)",
@@ -239,10 +243,7 @@ export const BackgroundGradientAnimation3: React.FC<BackgroundGradientAnimationP
             position: "absolute",
             background:
               "radial-gradient(circle at center, rgba(var(--fourth-color), 0.8) 0, rgba(var(--fourth-color), 0) 50%) no-repeat",
-            mixBlendMode: getComputedStyle(document.body)
-              .getPropertyValue("--blending-value")
-              .trim() as React.CSSProperties["mixBlendMode"],
-
+            mixBlendMode: blendingValue as React.CSSProperties["mixBlendMode"],
             width: "var(--size)",
             height: "var(--size)",
             top: "calc(50% - var(--size)/2)",
@@ -257,10 +258,7 @@ export const BackgroundGradientAnimation3: React.FC<BackgroundGradientAnimationP
             position: "absolute",
             background:
               "radial-gradient(circle at center, rgba(var(--fifth-color), 0.8) 0, rgba(var(--fifth-color), 0) 50%) no-repeat",
-            mixBlendMode: getComputedStyle(document.body)
-              .getPropertyValue("--blending-value")
-              .trim() as React.CSSProperties["mixBlendMode"],
-
+            mixBlendMode: blendingValue as React.CSSProperties["mixBlendMode"],
             width: "var(--size)",
             height: "var(--size)",
             top: "calc(50% - var(--size)/2)",
@@ -270,7 +268,7 @@ export const BackgroundGradientAnimation3: React.FC<BackgroundGradientAnimationP
           }}
         ></div>
 
-        {interactive && (
+        {isClient && interactive && (
           <div
             ref={interactiveRef}
             onMouseMove={handleMouseMove}
@@ -278,10 +276,7 @@ export const BackgroundGradientAnimation3: React.FC<BackgroundGradientAnimationP
               position: "absolute",
               background:
                 "radial-gradient(circle at center, rgba(var(--pointer-color), 0.8) 0, rgba(var(--pointer-color), 0) 50%) no-repeat",
-              mixBlendMode: getComputedStyle(document.body)
-                .getPropertyValue("--blending-value")
-                .trim() as React.CSSProperties["mixBlendMode"],
-
+              mixBlendMode: blendingValue as React.CSSProperties["mixBlendMode"],
               width: "100%",
               height: "100%",
               top: "-50%",

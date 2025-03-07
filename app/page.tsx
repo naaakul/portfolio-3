@@ -10,12 +10,14 @@ import Footer from "@/components/section/Footer";
 
 const Page = () => {
   useEffect(() => {
-    const lenis = new Lenis();
-    function raf(time: any) {
-      lenis.raf(time);
+    if (typeof window !== "undefined") { 
+      const lenis = new Lenis();
+      function raf(time: any) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
       requestAnimationFrame(raf);
     }
-    requestAnimationFrame(raf);
   }, []);
 
   return (

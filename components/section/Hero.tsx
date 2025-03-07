@@ -38,7 +38,7 @@ const Hero = () => {
       <div className="flex flex-col gap-6">
         <div className="flex flex-col gap-2">
           <h2 className="text-3xl text-white tracking-tight font-medium">hey there, I'm Nakul</h2>
-          <p className="text-muted-foreground max-w-prose text-sm lg:text-base">20 M | Bhopal, India</p>
+          <p className="text-muted-foreground text-zinc-500 max-w-prose text-sm lg:text-base">20 M | Bhopal, India</p>
         </div>
         <p className="text-white max-w-prose text-lg">I build stuff with Next.js, dabble in Web3 and AI-ML. and take on design and freelance gigs.</p>
       </div>
