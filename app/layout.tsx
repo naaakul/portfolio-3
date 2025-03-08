@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Averia_Libre, Gabarito, Josefin_Sans, Jost } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -9,6 +9,27 @@ const geistSans = Geist({
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+const averiaLibre = Averia_Libre({
+  variable: "--font-averia-libre",
+  subsets: ["latin"],
+  weight: "400",
+});
+
+const gabarito = Gabarito({
+  variable: "--font-gabarito",
+  subsets: ["latin"],
+});
+
+const josefinSans = Josefin_Sans({
+  variable: "--font-josefin-sans",
+  subsets: ["latin"],
+});
+
+const jost = Jost({
+  variable: "--font-jost",
   subsets: ["latin"],
 });
 
@@ -25,7 +46,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black`}
+        className={`
+          ${geistSans.variable} 
+          ${geistMono.variable} 
+          ${averiaLibre.variable}
+          ${gabarito.variable}
+          ${josefinSans.variable}
+          ${jost.variable}
+          antialiased bg-black
+        `}
       >
         <div className="z-30 pointer-events-none bg-gradient-to-t from-transparent via-transparent to-black w-full h-3/5 fixed top-0"></div>
         {children}

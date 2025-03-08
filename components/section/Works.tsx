@@ -59,8 +59,8 @@ const Works = () => {
             duration: 1,
             scrollTrigger: {
               trigger: boxRef.current,
-              start: "top 80%",
-              end: "top 50%",
+              start: "-20% 80%",
+              end: "-20% 50%",
               scrub: true,
             },
           }

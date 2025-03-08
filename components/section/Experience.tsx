@@ -25,7 +25,7 @@ const cardData: info[] = [
 
 const Experience = () => {
   const boxRef = useRef(null);
-  
+
   useEffect(() => {
     let ctx = gsap.context(() => {
       gsap.fromTo(
@@ -36,8 +36,8 @@ const Experience = () => {
           duration: 1,
           scrollTrigger: {
             trigger: boxRef.current,
-            start: "top 80%",
-            end: "top 50%",
+            start: "-20% 80%",
+            end: "-20% 50%",
             scrub: true,
           },
         }
@@ -48,7 +48,10 @@ const Experience = () => {
   }, []);
 
   return (
-    <div ref={boxRef} className="grid grid-cols-1 px-4 sm:px-0 gap-6 max-w-3xl mx-auto w-full">
+    <div
+      ref={boxRef}
+      className="grid grid-cols-1 px-4 sm:px-0 gap-6 max-w-3xl mx-auto w-full"
+    >
       <div className="flex flex-col gap-1">
         <h2 className="text-2xl text-white tracking-tighter font-bold uppercase">
           Experience
