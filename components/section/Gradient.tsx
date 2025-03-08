@@ -35,7 +35,7 @@ const Gradient = () => {
   }, []);
 
   return (
-    <div ref={boxRef} className="relative h-screen z-[53]">
+    <div ref={boxRef} className="relative h-screen z-[53] mb-16">
       <div className="pointer-events-none z-[52] absolute w-full h-full inset-0 flex justify-center items-center">
         <AnimatedText/> 
       </div>

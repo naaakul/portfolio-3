@@ -15,14 +15,14 @@ const WorkCard = ({
   return (
     <div className="flex flex-col gap-2 text-white pb-5">
       <div className="flex gap-10">
-        <a href={link ? link : gitLink}>
+        <a target="_blank" href={link ? link : gitLink}>
           <p className="flex items-center text-lg gap-2 font-medium">
             <MdArrowOutward className="text-xl" />
             {name}
           </p>
         </a>
         {link && (
-          <a href={gitLink}>
+          <a target="_blank" href={gitLink}>
             <p className="flex items-center text-lg gap-2 font-medium">
               <MdArrowOutward className="text-xl" />
               Source Code

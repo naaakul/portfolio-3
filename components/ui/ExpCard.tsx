@@ -13,7 +13,7 @@ const ExpCard = ({
 }) => {
   return (
     <div className="flex flex-col gap-2 text-white pb-5">
-      <a href={link}>
+      <a target="_blank" href={link}>
         <p className="flex items-center text-lg gap-2 font-medium">
           <MdArrowOutward className="text-xl" />
           {name}

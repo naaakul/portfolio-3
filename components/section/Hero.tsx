@@ -4,10 +4,11 @@ import { GithubIcon } from "@/components/ui/github";
 import { LinkedinIcon } from "../ui/linkedin";
 import Link from "next/link";
 import { InstagramIcon } from "../ui/instagram";
+import { RiTwitterXLine } from "react-icons/ri";
 
 const Hero = () => {
   return (
-    <div className="grid grid-col-1 gap-6 max-w-3xl mx-auto px-4 sm:px-0 my-32 w-full">
+    <div className="grid grid-col-1 gap-6 max-w-3xl mx-auto px-4 sm:px-0 my-28 w-full">
       <div className="flex gap-6 justify-between">
         <Image
           src="/me.png"
@@ -20,27 +21,17 @@ const Hero = () => {
           <Link
             target="_blank"
             href={"https://x.com/heynakul"}
-            className="size-8 select-none p-2 text-white hover:bg-zinc-800 rounded-md transition-colors duration-200 flex items-center justify-center"
+            className="size-8 select-none text-white hover:bg-zinc-800 rounded-md transition-colors duration-200 flex items-center justify-center"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="scale-90 text-white"
-              fill="none"
-              viewBox="0 0 1200 1220"
-            >
-              <path
-                fill="currentColor"
-                d="M714.163 519.284 1160.89 0h-105.86L667.137 450.887 357.328 0H0l468.492 681.821L0 1226.37h105.866l409.625-476.152 327.181 476.152H1200L714.137 519.284h.026ZM569.165 687.828l-47.468-67.894-377.686-540.24h162.604l304.797 435.991 47.468 67.894 396.2 566.721H892.476L569.165 687.854v-.026Z"
-              ></path>
-            </svg>
+            <RiTwitterXLine />
           </Link>
           <Link target="_blank" href={"https://github.com/naaakul"}>
             <GithubIcon className="text-white size-8" />
           </Link>
-          <Link target="_blank" href={"https://www.linkedin.com/in/nakul-chouksey/"}>
+          <Link target="_blank" href={"https://linkedin.com/in/nakul-chouksey/"}>
             <LinkedinIcon className="text-white size-8 " />
           </Link>
-          <Link target="_blank" href={"https://www.instagram.com/_naakul/"}>
+          <Link target="_blank" href={"https://instagram.com/_naakul/"}>
             <InstagramIcon className="text-white size-8 " />
           </Link>
         </div>
@@ -51,7 +42,7 @@ const Hero = () => {
             hey there, I'm Nakul
           </h2>
           <p className="text-muted-foreground text-zinc-500 max-w-prose text-sm lg:text-base">
-            20 M | Bhopal, India | Builder at <Link target="_blank" href={"https://www.numbersdao.fun/"}>@NumbersDAO</Link> 
+            20 M | Bhopal, India | Builder at <Link target="_blank" href={"https://numbersdao.fun/"}>@NumbersDAO</Link> 
           </p>
         </div>
         <p className="text-white max-w-prose text-lg">

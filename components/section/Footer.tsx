@@ -40,10 +40,6 @@ const Footer = () => {
   const animations = [
     BackgroundGradientAnimation1,
     BackgroundGradientAnimation2,
-    BackgroundGradientAnimation2,
-    BackgroundGradientAnimation2,
-    BackgroundGradientAnimation2,
-    BackgroundGradientAnimation2,
     BackgroundGradientAnimation3,
     BackgroundGradientAnimation4,
   ];
@@ -68,7 +64,7 @@ const Footer = () => {
           </div>
           <div className="relative overflow-hidden w-full h-full flex justify-end px-12 text-right items-start py-12 text-white">
             <div className="flex justify-between w-full sm:text-lg md:text-xl">
-              <p className="text-white/60 text-sm">Last updated: 30-03-2025</p>
+              <p className="text-white/60 text-sm">Last updated: 08-03-2025</p>
               <ul>
                 <li className="hover:underline cursor-pointer">
                   <a target="_blank" href="https://x.com/heynakul">
@@ -81,7 +77,7 @@ const Footer = () => {
                   </a>
                 </li>
                 <li className="hover:underline cursor-pointer">
-                  <a target="_blank" href="https://www.linkedin.com/in/nakul-chouksey/">
+                  <a target="_blank" href="https://linkedin.com/in/nakul-chouksey/">
                     Linkedin
                   </a>
                 </li>
@@ -89,7 +85,7 @@ const Footer = () => {
             </div>
             <h2 className="absolute -bottom-4 josefin-sans left-0 translate-y-1/3 sm:text-[192px] text-[128px] text-white font-black tracking-tighter">
               <span className="hidden sm:inline">NAKUL.</span>
-              <span className="inline sm:hidden">NAK.</span>
+              <span className="inline sm:hidden">NAK</span>
             </h2>
           </div>
         </div>

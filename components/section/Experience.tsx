@@ -17,7 +17,7 @@ interface info {
 const cardData: info[] = [
   {
     name: "Numbers DAO",
-    link: "https://numbersdao.com/",
+    link: "https://numbersdao.fun/",
     date: "Feb 2025 - Present",
     des: "Numbers DAO helps builders grow in the crypto space by providing personalized tools, ecosystem connections, and tailored opportunities. I'm primarily working on the development of the Numbers DAO website and cummunity.",
   },
@@ -32,13 +32,14 @@ const Experience = () => {
         boxRef.current,
         { y: 100 },
         {
-          y: 0,
+          y: -10,
           duration: 1,
           scrollTrigger: {
             trigger: boxRef.current,
-            start: "-20% 80%",
-            end: "-20% 50%",
+            start: "-40% 80%",
+            end: "-40% 50%",
             scrub: true,
+            // markers: true
           },
         }
       );
@@ -50,7 +51,7 @@ const Experience = () => {
   return (
     <div
       ref={boxRef}
-      className="grid grid-cols-1 px-4 sm:px-0 gap-6 max-w-3xl mx-auto w-full"
+      className="grid grid-cols-1 px-4 sm:px-0 gap-6 max-w-3xl mx-auto w-full mb-16"
     >
       <div className="flex flex-col gap-1">
         <h2 className="text-2xl text-white tracking-tighter font-bold uppercase">

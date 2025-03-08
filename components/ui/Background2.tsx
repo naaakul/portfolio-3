@@ -21,9 +21,9 @@ interface BackgroundGradientAnimationProps {
 }
 
 export const BackgroundGradientAnimation3: React.FC<BackgroundGradientAnimationProps> = ({
-  gradientBackgroundStart = "rgb(108, 0, 162)",
-  gradientBackgroundEnd = "rgb(0, 17, 82)",
-  firstColor = "18, 113, 255",
+  gradientBackgroundStart = "#223A92",
+  gradientBackgroundEnd = "#1A0433",
+  firstColor = "17, 13, 72",
   secondColor = "221, 74, 255",
   thirdColor = "100, 220, 255",
   fourthColor = "200, 50, 50",
