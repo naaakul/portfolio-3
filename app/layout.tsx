@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Averia_Libre, Gabarito, Josefin_Sans, Jost } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/react"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -58,6 +59,7 @@ export default function RootLayout({
       >
         <div className="z-30 pointer-events-none bg-gradient-to-t from-transparent via-transparent to-black w-full h-3/5 fixed top-0"></div>
         {children}
+        <Analytics />
         <div className="z-30 pointer-events-none bg-gradient-to-b from-transparent via-transparent to-black w-full h-3/5 fixed bottom-0"></div>
       </body>
     </html>
