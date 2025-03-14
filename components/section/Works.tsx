@@ -18,7 +18,7 @@ interface info {
 const cardData: info[] = [
   {
     name: "Wizzzard",
-    link: "https://waizard.nakul.space/auth/signup",
+    link: "https://wizard.nakul.space/auth/signup",
     gitLink: "https://github.com/naaakul/Wizzzard",
     des: "Wizard is a Solana-powered quiz application where users participate in weekly quizzes, earn points, and compete on leaderboards. It ensures fair play with features like tab-switch detection and randomized questions for each participant.",
   },
