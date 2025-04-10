@@ -20,7 +20,7 @@ const Hero = () => {
         <div className="flex gap-3.5">
           <Link
             target="_blank"
-            href={"https://x.com/heynakul"}
+            href={"https://x.com/_naaakul"}
             className="size-8 select-none text-white hover:bg-zinc-800 rounded-md transition-colors duration-200 flex items-center justify-center"
           >
             <RiTwitterXLine />
