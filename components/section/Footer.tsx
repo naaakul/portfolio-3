@@ -5,11 +5,11 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 import React from "react";
-import { BackgroundGradientAnimation4 } from "../ui/Background3";
-import { BackgroundGradientAnimation3 } from "../ui/Background2";
+// import { BackgroundGradientAnimation4 } from "../ui/Background3";
+// import { BackgroundGradientAnimation3 } from "../ui/Background2";
 import {
   BackgroundGradientAnimation1,
-  BackgroundGradientAnimation2,
+  // BackgroundGradientAnimation2,
 } from "../ui/Background1";
 
 const Footer = () => {
@@ -39,9 +39,9 @@ const Footer = () => {
 
   const animations = [
     BackgroundGradientAnimation1,
-    BackgroundGradientAnimation2,
-    BackgroundGradientAnimation3,
-    BackgroundGradientAnimation4,
+    // BackgroundGradientAnimation2,
+    // BackgroundGradientAnimation3,
+    // BackgroundGradientAnimation4,
   ];
 
   const RandomBackground = useMemo(
