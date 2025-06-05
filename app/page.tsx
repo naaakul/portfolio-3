@@ -7,10 +7,11 @@ import Experience from "@/components/section/Experience";
 import Works from "@/components/section/Works";
 import Lenis from "lenis";
 import Footer from "@/components/section/Footer";
+import Side from "@/components/section/Side";
 
 const Page = () => {
   useEffect(() => {
-    if (typeof window !== "undefined") { 
+    if (typeof window !== "undefined") {
       const lenis = new Lenis();
       function raf(time: any) {
         lenis.raf(time);
@@ -26,6 +27,7 @@ const Page = () => {
       <Gradient />
       <Experience />
       <Works />
+      <Side />
       <Footer />
     </div>
   );

@@ -1,7 +1,14 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Averia_Libre, Gabarito, Josefin_Sans, Jost } from "next/font/google";
+import {
+  Geist,
+  Geist_Mono,
+  Averia_Libre,
+  Gabarito,
+  Josefin_Sans,
+  Jost,
+} from "next/font/google";
 import "./globals.css";
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,8 +42,8 @@ const jost = Jost({
 });
 
 export const metadata: Metadata = {
-  title: "Nakul Chouksey | Builder & Developer",
-  description: "Building web apps, startups, and cool stuff.",
+  title: "Nakul Chouksey",
+  description: "Building web apps, SaaS, and cool stuff.",
 };
 
 export default function RootLayout({
@@ -45,7 +52,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="select-none">
       <body
         className={`
           ${geistSans.variable} 

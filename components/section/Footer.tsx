@@ -64,7 +64,7 @@ const Footer = () => {
           </div>
           <div className="relative overflow-hidden w-full h-full flex justify-end px-12 text-right items-start py-12 text-white">
             <div className="flex justify-between w-full sm:text-lg md:text-xl">
-              <p className="text-white/60 text-sm">Last updated: 08-03-2025</p>
+              <p className="text-white/60 text-sm">Last updated: 06-06-2025</p>
               <ul>
                 <li className="hover:underline cursor-pointer">
                   <a target="_blank" href="https://x.com/heynakul">
